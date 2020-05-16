@@ -1,32 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik:wght@500&display=swap');
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  #app {
+    min-height: 100vh;
+  }
+  .evn-primary{
+    background-color: #2c3e50;
+  }
+  .evn-secondary{
+    background-color: #34495e;
+  }
+  .evn-title{
+    font-family: 'Rubik', sans-serif;
+  }
+  .evn-desc{
+    font-family: 'Poppins', sans-serif;
+  }
+  .evn-shadow{
+    box-shadow: 0 0px 10px 0 #000000, 0 0px 5px 0 #000000;
+  }
+  .evn-rounded{
+    border-radius: 10px;
+  }
 </style>

@@ -1,18 +1,40 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PokeSearch :apiUrl="apiUrl" @setPokemonUrl="setPokemonUrl"/>
+    <PokeCard :apiUrl="apiUrl" :imageUrl="imageUrl" @setPokemonUrl="setPokemonUrl"/>
+    <PokeDetail  v-if="showDetail" :pokemonUrl="pokemonUrl" :imageUrl="imageUrl" @closeDetail="closeDetail"/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PokeSearch from '../components/_module/PokeSearch.vue'
+import PokeCard from '../components/_module/PokeCard.vue'
+import PokeDetail from '../components/_module/PokeDetail.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    PokeSearch,
+    PokeCard,
+    PokeDetail
+  },
+  data () {
+    return {
+      imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
+      apiUrl: 'https://pokeapi.co/api/v2/pokemon/',
+      pokemonUrl: '',
+      showDetail: false
+    }
+  },
+  methods: {
+    setPokemonUrl (url) {
+      this.pokemonUrl = url
+      this.showDetail = true
+    },
+    closeDetail () {
+      this.pokemonUrl = ''
+      this.showDetail = false
+    }
   }
 }
 </script>
