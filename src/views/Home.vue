@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <PokeSearch :apiUrl="apiUrl" @setPokemonUrl="setPokemonUrl"/>
-    <PokeCard :apiUrl="apiUrl" :imageUrl="imageUrl" @setPokemonUrl="setPokemonUrl"/>
+    <PokeCard :apiUrl="apiUrl" :imageUrl="imageUrl"/>
     <PokeDetail  v-if="showDetail" :pokemonUrl="pokemonUrl" :imageUrl="imageUrl" @closeDetail="closeDetail"/>
   </div>
 </template>

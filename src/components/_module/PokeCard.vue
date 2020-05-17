@@ -1,7 +1,6 @@
 <template>
 <div class="row mr-0 ml-0">
-     <div class="card evn-secondary my-4 mx-3" v-for="pokemon in pokemons" :key="pokemon.id"
-     @click="setPokemonUrl(pokemon.url)">
+     <div class="card evn-secondary my-4 mx-3" v-for="pokemon in pokemons" :key="pokemon.id">
         <img :src="imageUrl + pokemon.id +'.png'" alt="pokemon"
         style="height: 200px; object-fit: cover;">
         <div class="card-body">
